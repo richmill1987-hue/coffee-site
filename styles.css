@@ -29,7 +29,6 @@ body {
     background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
     url('https://images.unsplash.com/photo-1536227661368-deef57acf708');
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
 }
@@ -251,7 +250,6 @@ body {
 @media(max-width:992px){
     body{
        background-attachment: scroll;
-       background-repeat: no-repeat;
        background-size: 100% auto;
     }
     
@@ -376,5 +374,6 @@ body {
     100% { box-shadow: 0 0 0 0 rgba(0, 183, 183, 0); }
 
 }
+
 
 
