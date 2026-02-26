@@ -248,6 +248,11 @@ body {
 
 /* MOBILE SETTINGS */
 @media(max-width:992px){
+    body{
+       background-attachment: scroll;
+       background-size: 100% auto;
+    }
+    
     .hero h1 { font-size: 2.5rem; }
     .slogan p { font-size: 1.5rem; margin-bottom: 50px; }
     
@@ -367,4 +372,5 @@ body {
     0% { box-shadow: 0 0 0 0 rgba(0, 183, 183, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(0, 183, 183, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0, 183, 183, 0); }
+
 }
