@@ -50,6 +50,14 @@
             <div class="play-button"></div>
         </div>
     </div>
+            <div class="video-wrapper">
+        <video id="vid3"> 
+            <source src="lineshotconverted.mp4" type="video/mp4">
+        </video>
+        <div class="play-overlay" onclick="this.parentElement.querySelector('video').play(); this.style.display='none'; this.parentElement.querySelector('video').controls=true;">
+            <div class="play-button"></div>
+        </div>
+    </div>
 
     <img src="familypic.JPEG">
     <img src="outlineshot.JPEG">
@@ -70,6 +78,7 @@
 
 
 </html>
+
 
 
 
