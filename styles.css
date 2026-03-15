@@ -389,5 +389,32 @@ body {
     background: #00b7b7;
     color: white !important;
 }
+/* Glassmorphism Form Inputs */
+.contact-card input, 
+.contact-card textarea {
+    background: rgba(0, 0, 0, 0.4) !important; /* Dark transparent background */
+    border: 1px solid rgba(0, 183, 183, 0.4) !important; /* Teal border */
+    color: white !important; /* Makes your typing white */
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Glow effect when you click inside a box */
+.contact-card input:focus, 
+.contact-card textarea:focus {
+    border-color: #00b7b7 !important;
+    box-shadow: 0 0 10px rgba(0, 183, 183, 0.3);
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Makes the placeholder text (like "Your Name") slightly faded */
+.contact-card input::placeholder, 
+.contact-card textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
 
 
