@@ -275,6 +275,25 @@ body {
         width:100%;
         text-align:center;
     }
+    /* Add this inside your @media(max-width:992px) block */
+    .catering-cta {
+    margin: 20px 0; /* Less aggressive margin for mobile */
+    }
+
+    .cta-button {
+    font-size: 1rem; /* Slightly smaller button for small screens */
+    padding: 12px 24px;
+    }  
+
+/* Ensure the catering form and images stack vertically */
+    .content-wrapper {
+    flex-direction: column; 
+    align-items: center;
+   }
+
+   .about-text, .image-container {
+    width: 100%; /* Take up full width on mobile */
+   }
 }
 
 /* MENU BOARD STYLING */
