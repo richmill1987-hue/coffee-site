@@ -259,10 +259,11 @@ body {
     .content-wrapper {
         flex-direction: column;
         text-align: center;
+        align-items: center:
     }
     
-    .about-text {
-        text-align: center;
+    .about-text, .image container {
+        width: 100%;
     }
 
     .nav-links{
@@ -275,25 +276,7 @@ body {
         width:100%;
         text-align:center;
     }
-    /* Add this inside your @media(max-width:992px) block */
-    .catering-cta {
-    margin: 20px 0; /* Less aggressive margin for mobile */
-    }
-
-    .cta-button {
-    font-size: 1rem; /* Slightly smaller button for small screens */
-    padding: 12px 24px;
-    }  
-
-/* Ensure the catering form and images stack vertically */
-    .content-wrapper {
-    flex-direction: column; 
-    align-items: center;
-   }
-
-   .about-text, .image-container {
-    width: 100%; /* Take up full width on mobile */
-   }
+    
 }
 
 /* MENU BOARD STYLING */
@@ -393,28 +376,18 @@ body {
     100% { box-shadow: 0 0 0 0 rgba(0, 183, 183, 0); }
 
 }
-.catering-cta {
-    margin: -40px 0 60px 0; /* Adjusts spacing between slogan and images */
+/* NEW: Catering link inside the Nav Bar */
+.nav-links a.nav-catering {
+    border: 1px solid #00b7b7; /* Adds the teal outline */
+    padding: 6px 15px;
+    border-radius: 20px;
+    transition: 0.3s ease;
 }
 
-.cta-button {
-    background: transparent;
-    color: #00b7b7;
-    border: 2px solid #00b7b7;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.cta-button:hover {
+/* Makes the button fill with color when you hover over it */
+.nav-links a.nav-catering:hover {
     background: #00b7b7;
-    color: white;
-    box-shadow: 0 0 20px rgba(0, 183, 183, 0.4);
+    color: white !important;
 }
 
 
