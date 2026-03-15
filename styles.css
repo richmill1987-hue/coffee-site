@@ -374,6 +374,28 @@ body {
     100% { box-shadow: 0 0 0 0 rgba(0, 183, 183, 0); }
 
 }
+.catering-cta {
+    margin: -40px 0 60px 0; /* Adjusts spacing between slogan and images */
+}
 
+.cta-button {
+    background: transparent;
+    color: #00b7b7;
+    border: 2px solid #00b7b7;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #00b7b7;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 183, 183, 0.4);
+}
 
 
