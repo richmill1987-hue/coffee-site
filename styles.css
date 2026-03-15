@@ -259,10 +259,10 @@ body {
     .content-wrapper {
         flex-direction: column;
         text-align: center;
-        align-items: center:
+        align-items: center;
     }
     
-    .about-text, .image container {
+    .about-text, .image-container {
         width: 100%;
     }
 
