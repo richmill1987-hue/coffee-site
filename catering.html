@@ -50,7 +50,6 @@
 <footer>
   <p>&copy; 2026 Resilient Luv. All Rights Reserved.</p>
 </footer>
-
 <script>
   var form = document.getElementById("my-form");
   
@@ -61,6 +60,7 @@
     var data = new FormData(event.target);
     
     button.innerText = "Sending...";
+    button.disabled = true; // Prevents double-clicking
     
     fetch(event.target.action, {
       method: form.method,
@@ -70,25 +70,33 @@
       }
     }).then(response => {
       if (response.ok) {
-        status.innerHTML = "Thanks! Your inquiry has been sent.";
-        status.style.color = "green";
-        button.innerText = "Sent!";
+        // Success Message with styling
+        status.innerHTML = `
+          <div style="margin-top: 15px; padding: 12px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; text-align: center;">
+            <strong>Success!</strong> Your inquiry has been sent to Resilient Luv.
+          </div>`;
+        
+        button.innerText = "Submit Inquiry"; // Resets button text
+        button.disabled = false;
         form.reset();
       } else {
         response.json().then(data => {
-          status.innerHTML = "Oops! There was a problem.";
+          status.innerHTML = "Oops! There was a problem. Please try again.";
           status.style.color = "red";
           button.innerText = "Submit Inquiry";
+          button.disabled = false;
         })
       }
     }).catch(error => {
-      status.innerHTML = "Oops! There was a problem submitting your form";
+      status.innerHTML = "Connection error. Please check your internet.";
       status.style.color = "red";
       button.innerText = "Submit Inquiry";
+      button.disabled = false;
     });
   }
   form.addEventListener("submit", handleSubmit)
 </script>
+
 
 </body>
 </html>
