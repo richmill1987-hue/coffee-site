@@ -30,24 +30,65 @@
             </div>
 
             <div class="about-text">
-                <form class="contact-card" action="https://formspree.io/f/xjgaenrq" method="POST">
-                    <div class="menu-info">
-                        <h3>Book the Truck</h3>
-                        <input type="text" name="name" placeholder="Your Name" required> 
-                        <input type="email" name="email" placeholder="Email Address" required> 
-                        <input type="text" name="event" placeholder="Event Type (Wedding, Corporate, etc.)">                        
-                        <textarea name="message" placeholder="Tell us about your event..." rows="4"></textarea>
-                        <button type="submit" class="location-badge" style="border:none; cursor:pointer; width:100%;">
-                            Submit Inquiry
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <form id="my-form" class="contact-card" action="https://formspree.io/f/xjgaenrq" method="POST">
+        <div class="menu-info">
+          <h3>Book the Truck</h3>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="event" placeholder="Event Type (Wedding, Corporate, etc.)">
+          <textarea name="message" placeholder="Tell us about your event..." rows="4"></textarea>
+          
+          <button type="submit" id="sub-button" class="location-badge" style="border:none; cursor:pointer; width:100%;">Submit Inquiry</button>
+          
+          <p id="status" style="margin-top: 10px; font-weight: bold;"></p>
         </div>
-    </section>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Resilient Luv. All Rights Reserved.</p>
-    </footer>
+<footer>
+  <p>&copy; 2026 Resilient Luv. All Rights Reserved.</p>
+</footer>
+
+<script>
+  var form = document.getElementById("my-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("status");
+    var button = document.getElementById("sub-button");
+    var data = new FormData(event.target);
+    
+    button.innerText = "Sending...";
+    
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks! Your inquiry has been sent.";
+        status.style.color = "green";
+        button.innerText = "Sent!";
+        form.reset();
+      } else {
+        response.json().then(data => {
+          status.innerHTML = "Oops! There was a problem.";
+          status.style.color = "red";
+          button.innerText = "Submit Inquiry";
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+      status.style.color = "red";
+      button.innerText = "Submit Inquiry";
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
+
 </body>
 </html>
