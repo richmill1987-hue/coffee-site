@@ -60,7 +60,7 @@
     var data = new FormData(event.target);
     
     button.innerText = "Sending...";
-    button.disabled = true; // Prevents double-clicking
+    button.disabled = true; 
     
     fetch(event.target.action, {
       method: form.method,
@@ -70,27 +70,26 @@
       }
     }).then(response => {
       if (response.ok) {
-        // Success Message with styling
         status.innerHTML = `
-          <div style="margin-top: 15px; padding: 12px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; text-align: center;">
-            <strong>Success!</strong> Your inquiry has been sent to Resilient Luv.
+          <div style="margin-top: 15px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 4px; text-align: center; font-size: 14px;">
+            Success! Your message has been sent.
           </div>`;
         
-        button.innerText = "Submit Inquiry"; // Resets button text
+        button.innerText = "Submit"; // Button goes back to "Submit"
         button.disabled = false;
         form.reset();
       } else {
         response.json().then(data => {
-          status.innerHTML = "Oops! There was a problem. Please try again.";
+          status.innerHTML = "Error: Please try again.";
           status.style.color = "red";
-          button.innerText = "Submit Inquiry";
+          button.innerText = "Submit";
           button.disabled = false;
         })
       }
     }).catch(error => {
-      status.innerHTML = "Connection error. Please check your internet.";
+      status.innerHTML = "Connection error.";
       status.style.color = "red";
-      button.innerText = "Submit Inquiry";
+      button.innerText = "Submit";
       button.disabled = false;
     });
   }
