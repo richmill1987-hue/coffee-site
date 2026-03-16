@@ -443,19 +443,21 @@ body {
 /* 2. The High-Visibility Pulsing Button */
 .experience-btn {
     display: inline-block;
-    margin-bottom: 80px; /* This creates the gap between the button and the images */
-    padding: 18px 45px;
+    margin-top: 20px; /* This creates the gap between the button and the images */
+    margint-bottom: 20px
+    padding: 15px 35px;
     background: #00b7b7; /* Solid teal like your location badge */
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     border-radius: 50px;
     transition: transform 0.3s ease;
     cursor: pointer;
-    
+    text-align:center;
+        
     /* Uses the pulse animation already at the bottom of your CSS */
     animation: pulse 2s infinite; 
 }
