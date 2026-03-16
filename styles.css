@@ -416,5 +416,42 @@ body {
 .contact-card textarea::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
+.navbar-container {
+    display: flex;
+    justify-content: center; /* Centers everything as a group */
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 40px; /* Adjusts the space between the logo and the link groups */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: fit-content;
+}
+
+/* On Mobile, stack them so they don't look cramped */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+}
 
 
