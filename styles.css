@@ -452,6 +452,32 @@ body {
         gap: 15px;
         font-size: 0.9rem;
     }
+    /* 1. Reset the link color so it's NEVER purple */
+a.experience-link, 
+a.experience-link:visited {
+    text-decoration: none !important; /* Removes underline */
+    color: #333333 !important;      /* Changes purple to dark grey/black */
 }
+
+/* 2. Control the size of the "Huge" text */
+.experience-link h1 {
+    font-size: 2.5rem;             /* Adjust this number to change size */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* 3. Style the sub-text */
+.experience-link p {
+    font-size: 1.1rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* 4. Hover effect to make it feel interactive */
+.experience-link:hover h1 {
+    color: #d4a373; /* A coffee-gold color when you hover over it */
+}
+
 
 
