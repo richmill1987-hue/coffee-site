@@ -23,6 +23,8 @@ footer {
     color: rgba(255, 255, 255, 0.5); /* Faded so it's professional/not distracting */
     border-top: 1px solid rgba(0, 183, 183, 0.1);
     margin-top: 60px;
+    /* Adds padding at the bottom for mobile so content doesn't hide behind the sticky bar */
+    padding-bottom: 90px; 
 }
 
 body {
@@ -64,6 +66,58 @@ body {
 
 .nav-links a:hover {
     color: white;
+}
+
+/* HOLIDAY NAV BUTTON (DESKTOP) */
+.holiday-nav-btn {
+    background: #ff4757; /* Festive red accent to pop out from standard links */
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.4);
+    transition: 0.3s ease;
+}
+
+.holiday-nav-btn:hover {
+    background: #ff6b81 !important;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+/* MOBILE STICKY BOTTOM BAR */
+.mobile-holiday-bar {
+    display: none; /* Hidden on desktop */
+}
+
+@media(max-width: 992px) {
+    .mobile-holiday-bar {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 12px 15px;
+        text-align: center;
+        z-index: 1000;
+        border-top: 2px solid #00b7b7;
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-holiday-btn {
+        display: block;
+        background: #ff4757; /* Festive highlight color */
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1.05rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 0 12px rgba(255, 71, 87, 0.5);
+    }
 }
 
 /* HOME PAGE (HERO SECTION) */
@@ -444,7 +498,7 @@ body {
 .experience-btn {
     display: inline-block;
     margin-top: 20px; /* This creates the gap between the button and the images */
-    margint-bottom: 20px
+    margin-bottom: 20px;
     padding: 15px 35px;
     background: #00b7b7; /* Solid teal like your location badge */
     color: white;
