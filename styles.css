@@ -388,6 +388,38 @@ body {
     gap: 20px;
     margin-bottom: 40px;
 }
+
+/* BREAKFAST / LUNCH / DINNER COLUMN ALIGNMENT */
+.meal-sections-grid {
+    align-items: start;
+}
+
+.meal-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.meal-column .menu-item.no-image {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-category.meal-heading {
+    margin: 25px 0 15px 0;
+}
+
+@media (max-width: 992px) {
+    .meal-sections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-column .menu-item.no-image {
+        height: auto;
+    }
+}
+
 /* CONTACT CARD LOOK */
 .contact-card {
     background: rgba(255, 255, 255, 0.05);
